@@ -1,7 +1,7 @@
-import { Car } from "./shared/car-model";
+import { Observable } from "data/observable";
+import { ObservableArray } from "data/observable-array";
 import { Config } from "../shared/config";
-import { Observable } from 'data/observable';
-import { ObservableArray } from 'data/observable-array';
+import { Car } from "./shared/car-model";
 
 export class CarsListViewModel extends Observable {
     private _isLoading: boolean;
@@ -26,7 +26,7 @@ export class CarsListViewModel extends Observable {
     set isLoading(value: boolean) {
         if (this._isLoading !== value) {
             this._isLoading = value;
-            this.notifyPropertyChange('isLoading', value)
+            this.notifyPropertyChange("isLoading", value);
         }
     }
 
@@ -56,6 +56,7 @@ export class CarsListViewModel extends Observable {
         if (!response.ok) {
             throw Error(response.statusText);
         }
+
         return response;
     }
 }

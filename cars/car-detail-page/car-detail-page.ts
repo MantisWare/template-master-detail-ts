@@ -4,9 +4,9 @@ a code-behind file. The code-behind is a great place to place your view
 logic, and to set up your page’s data binding.
 */
 
-import { EventData } from 'data/observable';
-import { Page } from 'ui/page';
-import { CarDetailViewModel } from './car-detail-view-model';
+import { EventData } from "data/observable";
+import { Page } from "ui/page";
+import { CarDetailViewModel } from "./car-detail-view-model";
 
 import frameModule = require("ui/frame");
 
@@ -17,10 +17,10 @@ export function onNavigatingTo(args: EventData) {
     view the API reference of the Page to see what’s available at
     https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
     */
-    let page = <Page>args.object;
+    const page = <Page> args.object;
     page.bindingContext = new CarDetailViewModel(page.navigationContext);
 }
 
-export function onGoBack() {
+export function onBackButtonTap() {
     frameModule.topmost().goBack();
 }

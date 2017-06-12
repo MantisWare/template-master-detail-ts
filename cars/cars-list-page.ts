@@ -10,15 +10,15 @@ JavaScript modules. The CommonJS require() function is how you import
 JavaScript modules defined in other files.
 */
 
+import { EventData } from "data/observable";
+import { Page } from "ui/page";
+import { CarsListViewModel } from "./cars-list-view-model";
 import { Car } from "./shared/car-model";
-import { EventData } from 'data/observable';
-import { Page } from 'ui/page';
-import { CarsListViewModel } from './cars-list-view-model';
 
 import frameModule = require("ui/frame");
 import observableModule = require("data/observable");
 
-var carsListViewModel = new CarsListViewModel();
+const carsListViewModel = new CarsListViewModel();
 
 // Event handler for Page "navigatingTo" event attached in main-page.xml
 export function onNavigatingTo(args: EventData) {
@@ -27,7 +27,7 @@ export function onNavigatingTo(args: EventData) {
     view the API reference of the Page to see what’s available at
     https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
     */
-    let page = <Page>args.object;
+    const page = <Page> args.object;
 
     /*
     A page’s bindingContext is an object that should be used to perform
@@ -47,7 +47,7 @@ export function onNavigatingTo(args: EventData) {
 }
 
 export function onCarItemTap(args) {
-    var tappedCarItem = args.object.bindingContext;
+    const tappedCarItem = args.object.bindingContext;
 
     frameModule.topmost().navigate({
         moduleName: "cars/car-detail-page/car-detail-page",

@@ -25,4 +25,3 @@ export class Car {
         this.imageUrl = optionJson.ImageUrl;
     }
 }
-

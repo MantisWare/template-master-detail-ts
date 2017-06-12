@@ -1,5 +1,5 @@
+import { Observable } from "data/observable";
 import { Car } from "../shared/car-model";
-import { Observable } from 'data/observable';
 
 export class CarDetailViewModel extends Observable {
     private _car: Car;
