@@ -11,12 +11,13 @@ https://docs.nativescript.org/ui/components.
     -->
     <ActionBar title="{{ car.name }}" icon="" class="action-bar">
         <NavigationButton tap="onBackButtonTap" android.systemIcon="ic_menu_back" />
+        <ActionItem tap="onEditButtonTap" text="Edit" ios.position="right" android.position="right" />
     </ActionBar>
 
     <GridLayout rows="auto, auto">
         <Image src="{{ car.imageUrl }}" stretch="aspectFit" />
 
-        <GridLayout row="1" rows="* , *, *, *, *, *" columns="*,2*">
+        <GridLayout row="1" rows="* , *, *, *, *, *" columns="*, 2*">
             <Label text="Price"/>
             <Label col="1">
                 <FormattedString>

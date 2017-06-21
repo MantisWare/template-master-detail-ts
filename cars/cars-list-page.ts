@@ -11,14 +11,12 @@ JavaScript modules defined in other files.
 */
 
 import { EventData } from "data/observable";
+import { topmost } from "ui/frame";
 import { Page } from "ui/page";
+
 import { CarsListViewModel } from "./cars-list-view-model";
-import { Car } from "./shared/car-model";
 
-import frameModule = require("ui/frame");
-import observableModule = require("data/observable");
-
-const carsListViewModel = new CarsListViewModel();
+const viewModel = new CarsListViewModel();
 
 // Event handler for Page "navigatingTo" event attached in main-page.xml
 export function onNavigatingTo(args: EventData) {
@@ -27,7 +25,7 @@ export function onNavigatingTo(args: EventData) {
     view the API reference of the Page to see what’s available at
     https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
     */
-    const page = <Page> args.object;
+    const page = <Page>args.object;
 
     /*
     A page’s bindingContext is an object that should be used to perform
@@ -40,16 +38,14 @@ export function onNavigatingTo(args: EventData) {
     https://docs.nativescript.org/core-concepts/data-binding.
     */
 
-    page.bindingContext = carsListViewModel;
-
-    carsListViewModel.empty();
-    carsListViewModel.load();
+    page.bindingContext = viewModel;
+    viewModel.load();
 }
 
 export function onCarItemTap(args) {
     const tappedCarItem = args.object.bindingContext;
 
-    frameModule.topmost().navigate({
+    topmost().navigate({
         moduleName: "cars/car-detail-page/car-detail-page",
         context: tappedCarItem
     });

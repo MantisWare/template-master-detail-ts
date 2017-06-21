@@ -17,10 +17,19 @@ export function onNavigatingTo(args: EventData) {
     view the API reference of the Page to see what’s available at
     https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html
     */
-    const page = <Page> args.object;
+    const page = <Page>args.object;
     page.bindingContext = new CarDetailViewModel(page.navigationContext);
 }
 
-export function onBackButtonTap() {
+export function onBackButtonTap(): void {
     frameModule.topmost().goBack();
+}
+
+export function onEditButtonTap(args): void {
+    const tappedCarItem = args.object.bindingContext;
+
+    frameModule.topmost().navigate({
+        moduleName: "cars/car-detail-edit-page/car-detail-edit-page",
+        context: tappedCarItem.car
+    });
 }
