@@ -5,7 +5,7 @@
         <Label text="{{ title }}" />
     </ActionBar>
 
-    <GridLayout rows="auto, *, auto" height="200" verticalAlignment="top" class="list-modal-view">
+    <GridLayout rows="auto, *, auto" verticalAlignment="top" class="list-modal-view">
         <Label text="{{ title }}" ios:visibility="collapsed" class="h3 list-modal-header" />
         <lv:RadListView row="1" items="{{ items }}" selectionBehavior="Press" itemSelected="onItemSelected" class="list-modal-list">
             <lv:RadListView.listViewLayout>
