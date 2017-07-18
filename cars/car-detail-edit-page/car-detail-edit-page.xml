@@ -22,7 +22,7 @@
         </ActionItem>
     </ActionBar>
 
-    <GridLayout>
+    <GridLayout class="page-content">
         <ScrollView>
             <StackLayout class="car-list">
                 <Label text="CAR MAKE" class="car-list-odd" />

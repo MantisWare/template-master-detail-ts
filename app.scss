@@ -47,8 +47,8 @@ Slider{
     color: $blue-50;
 }
 
-.page {
-    label:not(.action-item) {
+.page-content {
+    label {
         font-size: $base-font-size;
     }
 }

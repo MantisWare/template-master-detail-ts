@@ -1,4 +1,4 @@
-<Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+<Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" >
     
     <ActionBar class="action-bar">
         <NavigationButton tap="onBackButtonTap" android.systemIcon="ic_menu_back">
@@ -14,7 +14,7 @@
         </ActionItem>
     </ActionBar>
 
-    <GridLayout rows="auto, auto">
+    <GridLayout rows="auto, auto" class="page-content">
         <Image src="{{ car.imageUrl }}" stretch="aspectFit" class="m-b-15" />
 
         <GridLayout row="1" rows="* , *, *, *, *, *" columns="*, 2*">
