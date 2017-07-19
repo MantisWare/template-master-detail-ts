@@ -5,8 +5,8 @@ import * as platform from "tns-core-modules/platform";
 import firebase = require("nativescript-plugin-firebase");
 
 import { Car } from "../shared/car-model";
-import { RoundingValueConverter } from "./RoundingValueConverter";
-import { VisibilityValueConverter } from "./VisibilityValueConverter";
+import { RoundingValueConverter } from "./roundingValueConverter";
+import { VisibilityValueConverter } from "./visibilityValueConverter";
 
 const editableProperties = [
     "doors",
