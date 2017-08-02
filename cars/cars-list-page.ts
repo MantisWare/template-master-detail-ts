@@ -1,4 +1,5 @@
 import { ListViewEventData } from "nativescript-telerik-ui/listview";
+import { isAndroid } from "tns-core-modules/platform";
 import { topmost } from "ui/frame";
 import { NavigatedData, Page } from "ui/page";
 
@@ -22,6 +23,10 @@ export function onNavigatingTo(args: NavigatedData): void {
     *************************************************************/
     if (args.isBackNavigation) {
         return;
+    }
+
+    if (isAndroid) {
+        topmost().android.cachePagesOnNavigate = true;
     }
 
     const page = <Page>args.object;
