@@ -56,6 +56,7 @@ export function onDoneButtonTap(args: EventData): void {
         .then(() => topmost().navigate({
             moduleName: "cars/cars-list-page",
             animated: true,
+            clearHistory: true,
             transition: {
                 name: "slideBottom",
                 duration: 200,
@@ -75,6 +76,7 @@ export function onDoneButtonTap(args: EventData): void {
         .then(() => topmost().navigate({
             moduleName: "cars/cars-list-page",
             animated: true,
+            clearHistory: true,
             transition: {
                 name: "slideBottom",
                 duration: 200,
